@@ -5,12 +5,24 @@
   <title>Constanza Urdaneta Romano</title>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --ut-orange: #BF5700;
+      --ut-beige: #F3EBDD;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 40px;
-      background-color: #f7f7f7;
+      background-color: #ffffff;
       color: #333;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     nav {
@@ -18,30 +30,42 @@
       justify-content: flex-end;
       gap: 30px;
       padding-bottom: 20px;
-      border-bottom: 2px solid #d2691e;
-      margin-bottom: 40px;
+      border-bottom: 3px solid var(--ut-orange);
+      margin-bottom: 50px;
     }
 
     nav a {
       text-decoration: none;
-      color: black;
+      color: #333;
       font-weight: 500;
     }
 
     nav a:hover {
-      color: #d2691e;
+      color: var(--ut-orange);
     }
 
-    .container {
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    h2 {
+      color: var(--ut-orange);
+      border-bottom: 2px solid var(--ut-orange);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .home-container {
       display: flex;
       gap: 40px;
       align-items: flex-start;
-      max-width: 1000px;
+      margin-bottom: 80px;
     }
 
     .profile-pic {
-      width: 220px;
-      border-radius: 8px;
+      width: 230px;
+      border-radius: 10px;
     }
 
     .bio {
@@ -49,45 +73,132 @@
       line-height: 1.6;
     }
 
-    h1 {
-      margin-top: 0;
-      font-size: 32px;
+    section {
+      margin-top: 80px;
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    #research {
+      background-color: var(--ut-beige);
+      border-left: 8px solid var(--ut-orange);
+    }
+
+    #teaching {
+      background-color: #ffffff;
+      border-left: 8px solid var(--ut-orange);
+    }
+
+    #contact {
+      background-color: var(--ut-beige);
+      border-left: 8px solid var(--ut-orange);
+    }
+
+    .paper {
+      margin-bottom: 30px;
+    }
+
+    .paper-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .linkedin-icon {
+      margin-top: 15px;
+    }
+
+    .linkedin-icon img {
+      width: 35px;
+      transition: transform 0.2s ease;
+    }
+
+    .linkedin-icon img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="contact.html">Contact</a>
+    <a href="#">Home</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <div class="container">
+  <!-- Home Section -->
+  <div class="home-container">
 
-    <!-- Profile Picture -->
     <img src="Portrait_CUR.JPG" alt="Constanza Urdaneta Romano" class="profile-pic">
 
-    <!-- Bio Section -->
     <div class="bio">
       <h1>Constanza Urdaneta Romano</h1>
 
       <p>
-        I am a Ph.D. candidate in Marketing at the University of Texas at Austin, specializing in the Marketing Strategy track. 
-
-      <p>
-        My research examines how internal organizational dynamics shape marketing effectiveness and firm performance. Broadly, I study how leadership structure, workforce composition, and employee behavior influence marketing-related outcomes. My work leverages large-scale employee-level data and causal inference methods to uncover the strategic implications of organizational design.
+        I am a Ph.D. candidate in Marketing at the University of Texas at Austin, specializing in the Marketing Strategy track. My research examines how internal organizational dynamics shape marketing effectiveness and firm performance. Broadly, I study how leadership structure, workforce composition, and employee behavior influence marketing-related outcomes. My work leverages large-scale employee-level data and causal inference methods to uncover the strategic implications of organizational design.
       </p>
-      
+
       <p>
         Prior to joining the doctoral program, I gained experience in the art market, working at both an auction house and a gallery. I hold a BBA in Marketing from the University of Texas at Austin, with a minor in Arts Management and Administration.
       </p>
-
     </div>
 
   </div>
+
+  <!-- Research Section -->
+  <section id="research">
+    <h2>Research</h2>
+
+    <div class="paper">
+      <div class="paper-title">The Gender Pay Gap in Marketing</div>
+      <p>
+        Examines gender-based compensation disparities within marketing roles, exploring how organizational structure and internal labor dynamics contribute to persistent wage gaps.
+      </p>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">
+        The Role of the Chief Customer Officer in Employee Turnover: An Internal Marketing Exploration
+      </div>
+      <p>
+        This research investigates how the presence and structure of customer-focused leadership influence employee turnover and marketing outcomes, highlighting internal marketing mechanisms as strategic mediators.
+      </p>
+      
+      <ul>
+    <li>Presented at the AMA Marketing Strategy Consortium, 2025</li>
+    <li>Presented at the Marketing Science Conference, 2025</li>
+  </ul>
+</div>
+
+  </section>
+
+  <!-- Teaching Section -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+
+    <p><strong>Principles of Marketing — Spring 2025</strong></p>
+    <p>
+      Assistant Instructor covering topics of consumer behavior, marketing research, and marketing strategy (4Ps).
+    </p>
+
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <p>Email: constanza.urdanetar@mccombs.utexas.edu</p>
+
+    <div class="linkedin-icon">
+      <a href="https://www.linkedin.com/in/constanza-urdaneta-romano/" target="_blank">
+        <img src="linkedin logo.avif" alt="LinkedIn">
+      </a>
+    </div>
+
+  </section>
 
 </body>
 </html>
