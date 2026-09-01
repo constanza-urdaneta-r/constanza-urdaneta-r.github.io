@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Constanza Urdaneta Romano</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     html {
@@ -10,286 +15,395 @@
     }
 
     :root {
-      --ut-orange: #BF5700;
-      --ut-beige: #F3EBDD;
+      --orange: #C1440C;
+      --orange-deep: #8f3208;
+      --forest: #2F4A3D;
+      --forest-deep: #203327;
+      --gold: #A9791E;
+      --gold-deep: #7c5913;
+      --burgundy: #6B1F1A;
+      --burgundy-deep: #4c1512;
+      --ink: #24211B;
+      --muted: #756c5c;
+      --cream: #FBF6EF;
+      --line: #E6DCC8;
+      --rule: #d9cdb4;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 400;
       margin: 0;
-      padding: 40px;
-      background-color: #ffffff;
-      color: #333;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 0;
+      background-color: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
     }
 
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 56px 32px 100px;
+    }
+
+    /* ---------- Nav ---------- */
     nav {
       display: flex;
       justify-content: flex-end;
-      gap: 30px;
-      padding-bottom: 20px;
-      border-bottom: 3px solid var(--ut-orange);
-      margin-bottom: 50px;
+      gap: 34px;
+      padding-bottom: 22px;
+      border-bottom: 2px solid var(--orange);
+      margin-bottom: 72px;
     }
 
     nav a {
       text-decoration: none;
-      color: #333;
+      color: var(--ink);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
       font-weight: 500;
+      transition: color 0.25s ease;
     }
 
     nav a:hover {
-      color: var(--ut-orange);
+      color: var(--orange);
     }
 
+    /* ---------- Headings ---------- */
     h1 {
-      margin-top: 0;
-      font-size: 32px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin: 0 0 10px;
+      font-size: 40px;
+      letter-spacing: 0.005em;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--orange);
+      font-size: 18px;
+      margin: 0 0 28px;
+      line-height: 1.5;
     }
 
     h2 {
-      color: var(--ut-orange);
-      border-bottom: 2px solid var(--ut-orange);
-      padding-bottom: 8px;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 26px;
+      letter-spacing: 0.01em;
+      margin: 0 0 28px;
+      padding-bottom: 14px;
+      border-bottom: 1.5px solid var(--rule);
+      position: relative;
     }
 
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1.5px;
+      width: 56px;
+      height: 3px;
+    }
+
+    #research h2::after { background-color: var(--forest); }
+    #teaching h2::after { background-color: var(--gold); }
+    #contact h2::after  { background-color: var(--burgundy); }
+
+    /* ---------- Home ---------- */
     .home-container {
       display: flex;
-      gap: 40px;
+      gap: 48px;
       align-items: flex-start;
-      margin-bottom: 80px;
+      margin-bottom: 96px;
     }
 
     .profile-pic {
-      width: 230px;
-      border-radius: 10px;
+      width: 220px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      box-shadow: 0 14px 30px -14px rgba(36, 33, 27, 0.35);
     }
 
     .bio {
-      max-width: 650px;
-      line-height: 1.6;
+      max-width: 620px;
     }
 
+    .bio p {
+      line-height: 1.85;
+      font-size: 16px;
+      color: var(--ink);
+      margin: 0 0 22px;
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---------- Sections ---------- */
     section {
-      margin-top: 80px;
-      padding: 40px;
-      border-radius: 10px;
+      margin-top: 96px;
+      padding: 44px 0 0;
+      border-top: 1px solid var(--line);
     }
 
-    #research {
-      background-color: var(--ut-beige);
-      border-left: 8px solid var(--ut-orange);
+    #research { border-left: none; }
+
+    .section-inner {
+      padding-left: 26px;
+      border-left: 4px solid transparent;
     }
 
-    #teaching {
-      background-color: #ffffff;
-      border-left: 8px solid var(--ut-orange);
-    }
-.teaching-links {
-  margin-top: 10px;
-}
-
-.award-button {
-  text-decoration: none;
-  background-color: var(--ut-orange);
-  color: white;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
-  display: inline-block;
-}
-
-.award-button:hover {
-  background-color: #8c3f00;
-}
-    #contact {
-      background-color: var(--ut-beige);
-      border-left: 8px solid var(--ut-orange);
-    }
+    #research .section-inner { border-left-color: var(--forest); }
+    #teaching .section-inner { border-left-color: var(--gold); }
+    #contact  .section-inner { border-left-color: var(--burgundy); }
 
     .paper {
-      margin-bottom: 30px;
+      margin-bottom: 34px;
+    }
+
+    .paper:last-child {
+      margin-bottom: 0;
     }
 
     .paper-title {
-      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
       font-size: 18px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      line-height: 1.4;
     }
 
-    .linkedin-icon {
-      margin-top: 15px;
+    .paper p {
+      line-height: 1.75;
+      margin: 0 0 12px;
+      color: var(--ink);
     }
 
-    .linkedin-icon img {
-      width: 35px;
-      transition: transform 0.2s ease;
+    .paper ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.9;
     }
 
-    .linkedin-icon img:hover {
-      transform: scale(1.1);
+    /* ---------- Teaching ---------- */
+    #teaching .course {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    #teaching p {
+      line-height: 1.75;
+      margin: 0 0 18px;
+    }
+
+    .teaching-links {
+      margin-top: 6px;
+    }
+
+    .award-button {
+      text-decoration: none;
+      background-color: var(--gold);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 13.5px;
+      letter-spacing: 0.02em;
+      transition: background-color 0.25s ease;
+      display: inline-block;
+    }
+
+    .award-button:hover {
+      background-color: var(--gold-deep);
+    }
+
+    /* ---------- Contact ---------- */
+    #contact p {
+      line-height: 1.8;
+      margin: 0 0 4px;
+      font-size: 16px;
     }
 
     .contact-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 15px;
-}
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin: 20px 0 28px;
+    }
 
-.icon {
-  width: 35px;
-  transition: transform 0.2s ease;
-}
+    .icon {
+      width: 32px;
+      transition: transform 0.25s ease;
+    }
 
-.icon:hover {
-  transform: scale(1.1);
-}
-.Award List {
-  text-decoration: none;
-  background-color: var(--ut-orange);
-  color: white;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
-}
+    .icon:hover {
+      transform: scale(1.1);
+    }
 
-.Award List:hover {
-  background-color: #8c3f00;
-}
-.cv-button {
-  text-decoration: none;
-  background-color: var(--ut-orange);
-  color: white;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
-}
+    .cv-button {
+      text-decoration: none;
+      background-color: var(--burgundy);
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 13.5px;
+      letter-spacing: 0.02em;
+      transition: background-color 0.25s ease;
+      display: inline-block;
+    }
 
-.cv-button:hover {
-  background-color: #8c3f00;
-}
+    .cv-button:hover {
+      background-color: var(--burgundy-deep);
+    }
+
+    footer {
+      margin-top: 90px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: 12.5px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 36px 22px 70px; }
+      nav { gap: 20px; justify-content: center; }
+      .home-container { flex-direction: column; gap: 28px; }
+      .profile-pic { width: 170px; }
+      h1 { font-size: 32px; }
+    }
   </style>
 </head>
 
 <body>
+  <div class="page">
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#">Home</a>
-    <a href="#research">Research</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- Navigation -->
+    <nav>
+      <a href="#">Home</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <!-- Home Section -->
-  <div class="home-container">
+    <!-- Home Section -->
+    <div class="home-container">
 
-    <img src="Portrait_CUR.JPG" alt="Constanza Urdaneta Romano" class="profile-pic">
+      <img src="Portrait_CUR.JPG" alt="Constanza Urdaneta Romano" class="profile-pic">
 
-    <div class="bio">
-      <h1>Constanza Urdaneta Romano</h1>
-
-      <p>
-        Constanza is a Ph.D. candidate in Marketing, Marketing Strategy track, at the McCombs School of Business, University of Texas at Austin.
-      </p>
-
-      <p>
-       Her research examines how firms manage and communicate value across multiple stakeholder markets. One stream of her work investigates internal organizational dynamics and their implications for marketing, including how leadership structure, workforce composition, and employee behavior shape marketing processes and outcomes. Her broader research interests include brand positioning in talent markets, branding and packaging, and nutrition and the voluntary disclosure of product information.
-     <p>
-
-      <p>
-       Methodologically, she is interested in econometric methods and causal inference, machine learning, large language models (LLMs), and text analysis, including topic modeling.
-        <p>
+      <div class="bio">
+        <h1>Constanza Urdaneta Romano</h1>
 
         <p>
-       Beyond her academic research, Constanza maintains an active interest in the art market, with a focus on art as an asset class, provenance, and collection management. Prior to entering the doctoral program, she worked in the art market at both an auction house and a gallery.
-       <p>
-      
-      <p>
-       She holds a BBA and an MS in Marketing from the University of Texas at Austin, with a minor in Arts Management and Administration.
-      </p>
-    </div>
+          Constanza Urdaneta is a Ph.D. candidate in Marketing, Marketing Strategy track, at the University of Texas at Austin.
+        </p>
 
-  </div>
+        <p>
+          Her research examines how firms manage and communicate value across multiple stakeholder markets. One stream of her work investigates how leadership compositions on internal marketing organizational dynamics and their employee behavior and retention shape marketing processes and outcomes. Her broader research interests include brand positioning in talent markets, branding and packaging, and nutrition and the voluntary disclosure of product information.
+        </p>
 
-  <!-- Research Section -->
-  <section id="research">
-    <h2>Research</h2>
+        <p>
+          Methodologically, she draws on econometric methods and causal inference, machine learning, large language models (LLMs), and text analysis, including topic modeling.
+        </p>
 
-    <div class="paper">
-      <div class="paper-title">The Gender Pay Gap in Marketing</div>
-      <p>
-        Gender-based compensation disparities within marketing roles. 
-        Exploration of how organizational structure and internal labor dynamics contribute to persistent wage gaps. 
-      </p>
+        <p>
+          Beyond her academic research, Constanza maintains an active interest in the art market, with a focus on art as an asset class, provenance, and collection management. Prior to entering the doctoral program, she worked in the art market at both an auction house and a gallery.
+        </p>
 
-        <ul>
-    <li>Presented at the AMA Marketing Strategy Consortium, 2025</li>
-    <li>Presented at the Marketing Science Conference, 2025</li>
-  </ul>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">
-        From Voice to Exit: How Chief Communications Officers Govern the Internal Market and Shape Employee Turnover
+        <p>
+          She holds a BBA and an MS in Marketing from the University of Texas at Austin, with a minor in Arts Management and Administration.
+        </p>
       </div>
-      <p>
-        Presence and structure of communications-focused leadership influence employee turnover and marketing outcomes. 
-        Highlights internal market orientation and employer brand clarity mechanisms as strategic mediators. 
-      </p>
-    
-</div>
 
-  </section>
-
-  <!-- Teaching Section -->
-  <section id="teaching">
-    <h2>Teaching</h2>
-
-<p><strong>Principles of Marketing — Spring 2025</strong></p>
-
-<p>
-  Assistant Instructor. Covered consumer behavior, marketing research, and marketing strategy and execution (4Ps).
-</p>
-
-<div class="teaching-links">
-  <a href="Access-Champions-List-Spring-2025.pdf" target="_blank" class="award-button">
-    Disability Champion Award
-  </a>
-</div>
-
-    </section>
-  
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-
-    <p>Email: constanza.urdanetar@mccombs.utexas.edu</p>
-
-    <div class="linkedin-icon">
-      <a href="https://www.linkedin.com/in/constanza-urdaneta-romano/" target="_blank">
-        <img src="linkedin logo.avif" alt="LinkedIn">
-      </a>
     </div>
 
-        <!-- CV -->
-    <a href="ConstanzaUrdanetaR_CV_03.2026.pdf" target="_blank" class="cv-button">
-      CV
-    </a>
+    <!-- Research Section -->
+    <section id="research">
+      <h2>Research</h2>
+
+      <div class="section-inner">
+        <div class="paper">
+          <div class="paper-title">The Gender Pay Gap in Marketing</div>
+          <p>
+            Gender-based compensation disparities within marketing roles.
+            Exploration of how organizational structure and internal labor dynamics contribute to persistent wage gaps.
+          </p>
+
+          <ul>
+            <li>Presented at the AMA Marketing Strategy Consortium, 2025</li>
+            <li>Presented at the Marketing Science Conference, 2025</li>
+          </ul>
+        </div>
+
+        <div class="paper">
+          <div class="paper-title">
+            From Voice to Exit: How Chief Communications Officers Govern the Internal Market and Shape Employee Turnover
+          </div>
+          <p>
+            Presence and structure of communications-focused leadership influence employee turnover and marketing outcomes.
+            Highlights internal market orientation and employer brand clarity mechanisms as strategic mediators.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+
+      <div class="section-inner">
+        <p class="course">Principles of Marketing, Spring 2025</p>
+
+        <p>
+          Assistant Instructor. Covered consumer behavior, marketing research, and marketing strategy and execution (4Ps).
+        </p>
+
+        <div class="teaching-links">
+          <a href="Access-Champions-List-Spring-2025.pdf" target="_blank" class="award-button">
+            Disability Champion Award
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="section-inner">
+        <p>Email: constanza.urdanetar@mccombs.utexas.edu</p>
+
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/constanza-urdaneta-romano/" target="_blank">
+            <img src="linkedin logo.avif" alt="LinkedIn" class="icon">
+          </a>
+        </div>
+
+        <a href="ConstanzaUrdanetaR_CV_03.2026.pdf" target="_blank" class="cv-button">
+          CV
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      Constanza Urdaneta Romano
+    </footer>
+
   </div>
-
-</section>
-
-  </section>
-
 </body>
 </html>
 
